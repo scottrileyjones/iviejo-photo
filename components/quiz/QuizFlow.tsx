@@ -67,11 +67,11 @@ const steps = [
 ]
 
 const vibeImages: Record<string, string> = {
-  'cinematic & moody': 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80',
-  'warm & golden': 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80',
-  'raw & editorial': 'https://images.unsplash.com/photo-1523264766099-e4c6aff2e2cf?w=600&q=80',
-  'soft & intimate': 'https://images.unsplash.com/photo-1488161628813-04466f872be2?w=600&q=80',
-  'bold & unexpected': 'https://images.unsplash.com/photo-1502252430442-aac78f397426?w=600&q=80',
+  'cinematic & moody': '/placeholder-bw.svg',
+  'warm & golden': '/placeholder-warm.svg',
+  'raw & editorial': '/placeholder-cool.svg',
+  'soft & intimate': '/placeholder-amber.svg',
+  'bold & unexpected': '/placeholder-amber.svg',
 }
 
 export default function QuizFlow() {

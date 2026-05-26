@@ -21,12 +21,12 @@ const shootData: Record<string, {
     film_format: 'medium format',
     description: 'shot over two days in the canyon. the light in late october in moab is unrepeatable — golden, long, and unforgiving in the best way.',
     images: [
-      { src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200&q=80', alt: 'Carter & Elise, Moab' },
-      { src: 'https://images.unsplash.com/photo-1502252430442-aac78f397426?w=1200&q=80', alt: 'Carter & Elise, Moab' },
-      { src: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=1200&q=80', alt: 'Carter & Elise, Moab' },
-      { src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&q=80', alt: 'Carter & Elise, Moab' },
-      { src: 'https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80', alt: 'Carter & Elise, Moab' },
-      { src: 'https://images.unsplash.com/photo-1523264766099-e4c6aff2e2cf?w=1200&q=80', alt: 'Carter & Elise, Moab' },
+      { src: '/placeholder-cool.svg', alt: 'Carter & Elise, Moab' },
+      { src: '/placeholder-amber.svg', alt: 'Carter & Elise, Moab' },
+      { src: '/placeholder-warm.svg', alt: 'Carter & Elise, Moab' },
+      { src: '/placeholder-warm.svg', alt: 'Carter & Elise, Moab' },
+      { src: '/placeholder-amber.svg', alt: 'Carter & Elise, Moab' },
+      { src: '/placeholder-cool.svg', alt: 'Carter & Elise, Moab' },
     ],
   },
   'marisol-oaxaca-2024': {
@@ -38,9 +38,9 @@ const shootData: Record<string, {
     film_format: '35mm',
     description: 'marisol wanted something that felt like a record — not a photo shoot. we wandered for half a day and let the city do most of the work.',
     images: [
-      { src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&q=80', alt: 'Marisol, Oaxaca' },
-      { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=80', alt: 'Marisol, Oaxaca' },
-      { src: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&q=80', alt: 'Marisol, Oaxaca' },
+      { src: '/placeholder-warm.svg', alt: 'Marisol, Oaxaca' },
+      { src: '/placeholder-bw.svg', alt: 'Marisol, Oaxaca' },
+      { src: '/placeholder-bw.svg', alt: 'Marisol, Oaxaca' },
     ],
   },
 }

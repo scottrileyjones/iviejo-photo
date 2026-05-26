@@ -17,7 +17,7 @@ export default function AboutTeaser() {
             <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+                src="/placeholder-bw.svg"
                 alt="the studio"
                 className="photo"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}

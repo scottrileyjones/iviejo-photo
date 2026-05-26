@@ -8,29 +8,29 @@ import AnimateIn from '@/components/shared/AnimateIn'
 
 const profileImages: Record<string, string[]> = {
   'portra-portrait': [
-    'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80',
-    'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80',
-    'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80',
+    '/placeholder-warm.svg',
+    '/placeholder-bw.svg',
+    '/placeholder-cool.svg',
   ],
   'ektar-wanderer': [
-    'https://images.unsplash.com/photo-1502252430442-aac78f397426?w=800&q=80',
-    'https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=800&q=80',
-    'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80',
+    '/placeholder-amber.svg',
+    '/placeholder-warm.svg',
+    '/placeholder-bw.svg',
   ],
   'hp5-editorial': [
-    'https://images.unsplash.com/photo-1523264766099-e4c6aff2e2cf?w=800&q=80',
-    'https://images.unsplash.com/photo-1488161628813-04466f872be2?w=800&q=80',
-    'https://images.unsplash.com/photo-1511895426328-dc8714191011?w=800&q=80',
+    '/placeholder-cool.svg',
+    '/placeholder-amber.svg',
+    '/placeholder-warm.svg',
   ],
   'gold-session': [
-    'https://images.unsplash.com/photo-1488161628813-04466f872be2?w=800&q=80',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
-    'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80',
+    '/placeholder-amber.svg',
+    '/placeholder-bw.svg',
+    '/placeholder-warm.svg',
   ],
   'medium-format-heirloom': [
-    'https://images.unsplash.com/photo-1511895426328-dc8714191011?w=800&q=80',
-    'https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=800&q=80',
-    'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80',
+    '/placeholder-warm.svg',
+    '/placeholder-warm.svg',
+    '/placeholder-cool.svg',
   ],
 }
 
