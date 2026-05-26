@@ -4,21 +4,21 @@ import AnimateIn from '@/components/shared/AnimateIn'
 
 export const metadata: Metadata = {
   title: 'about',
-  description: 'utah-based analog film photographer. we shoot on real film, develop in-house, and keep every negative.',
+  description: 'utah-based cinematic portrait photographer. we shoot digital, edit with analog soul, and treat every frame with intention.',
 }
 
 const process = [
   {
     label: 'before',
-    description: 'consultation, location scouting, choosing the right film stock for your light and session.',
+    description: 'consultation, location scouting, choosing the right look and light for your session.',
   },
   {
     label: 'during',
-    description: 'a session that moves slow on purpose. 36 frames per roll. each one intentional.',
+    description: 'a session that moves slow on purpose. we shoot with intention, not volume. every frame counts.',
   },
   {
     label: 'after',
-    description: '4–6 weeks for development, scanning, delivery. photographs worth the wait.',
+    description: '2–3 weeks for hand editing and delivery. every image edited individually — no batch presets.',
   },
 ]
 
@@ -46,17 +46,17 @@ export default function AboutPage() {
               <div>
                 <span className="t-eyebrow" style={{ marginBottom: 24, display: 'block' }}>about</span>
                 <p className="t-body" style={{ marginBottom: 16 }}>
-                  we started shooting film because digital felt too easy. too forgiving. too fast.
-                  when you can shoot 2,000 frames in a day, every frame means less.
+                  we use modern digital cameras — but we shoot and edit the way analog photographers think.
+                  slow down. frame with intention. make every image count before pressing the shutter.
                 </p>
                 <p className="t-body" style={{ marginBottom: 16 }}>
-                  film changed that. 36 exposures per roll. no preview. no delete. every decision
-                  made before the shutter opens. that discipline shows up in the photographs.
+                  the grain, warmth, and cinematic depth you see in our work aren&apos;t filters or presets.
+                  they&apos;re deliberate choices made by hand in post for every single image — inspired by
+                  the look and feel of analog film photography.
                 </p>
                 <p className="t-body" style={{ marginBottom: 16 }}>
                   we&apos;re based in utah — which means red rock, alpine forests, salt flats, and
-                  a quality of light that doesn&apos;t happen anywhere else. we develop in-house
-                  and keep every negative on file.
+                  a quality of light that doesn&apos;t happen anywhere else.
                 </p>
                 <p className="t-body">
                   what we&apos;re pushing against: the over-edited, smoothed-out, ring-lit portrait
@@ -81,7 +81,7 @@ export default function AboutPage() {
                     paddingLeft: 32,
                   }}
                 >
-                  &ldquo;i could shoot digital. i choose not to.&rdquo;
+                  &ldquo;the look is analog. the tools are modern. the intention is everything.&rdquo;
                 </blockquote>
               </div>
             </AnimateIn>

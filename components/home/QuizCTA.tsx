@@ -12,7 +12,7 @@ export default function QuizCTA() {
         </AnimateIn>
         <AnimateIn delay={100}>
           <p className="t-body" style={{ marginTop: 24, maxWidth: 560 }}>
-            take our 2-minute style quiz — we&apos;ll match you with the right film, location, and session type, then reach out personally.
+            take our 2-minute style quiz — we&apos;ll match you with the right look, location, and session type, then reach out personally.
           </p>
         </AnimateIn>
         <AnimateIn delay={200}>

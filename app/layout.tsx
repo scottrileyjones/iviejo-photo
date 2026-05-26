@@ -25,17 +25,17 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'iviejo photo — analog film photography, utah',
+    default: 'iviejo photo — cinematic portrait photography, utah',
     template: '%s — iviejo photo',
   },
-  description: 'utah-based analog film photographer specializing in portraits, couples, families & milestones. shot on 35mm and medium format. developed in-house.',
+  description: 'utah-based cinematic portrait photographer specializing in couples, families & milestones. modern digital capture with analog-inspired editing.',
   keywords: [
-    'analog film photographer utah',
-    'film photography portraits utah',
-    '35mm portrait photographer salt lake city',
-    'kodak portra photographer utah',
-    'medium format photographer utah',
-    'film photographer couples utah',
+    'cinematic portrait photographer utah',
+    'analog inspired photographer utah',
+    'film look portrait photographer salt lake city',
+    'cinematic couples photographer utah',
+    'portrait photographer utah',
+    'editorial photographer utah',
   ],
   openGraph: {
     siteName: 'iviejo photo',

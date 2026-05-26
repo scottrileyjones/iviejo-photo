@@ -7,27 +7,27 @@ import ImageCard from '@/components/ui/ImageCard'
 import AnimateIn from '@/components/shared/AnimateIn'
 
 const profileImages: Record<string, string[]> = {
-  'portra-portrait': [
+  'warm-portrait': [
     '/placeholder-warm.svg',
     '/placeholder-bw.svg',
     '/placeholder-cool.svg',
   ],
-  'ektar-wanderer': [
+  'vivid-wanderer': [
     '/placeholder-amber.svg',
     '/placeholder-warm.svg',
     '/placeholder-bw.svg',
   ],
-  'hp5-editorial': [
+  'editorial-bw': [
     '/placeholder-cool.svg',
     '/placeholder-amber.svg',
     '/placeholder-warm.svg',
   ],
-  'gold-session': [
+  'golden-session': [
     '/placeholder-amber.svg',
     '/placeholder-bw.svg',
     '/placeholder-warm.svg',
   ],
-  'medium-format-heirloom': [
+  'heirloom-session': [
     '/placeholder-warm.svg',
     '/placeholder-warm.svg',
     '/placeholder-cool.svg',
@@ -39,12 +39,12 @@ interface Props {
 }
 
 export default function QuizResult({ profile }: Props) {
-  const images = profileImages[profile.id] ?? profileImages['portra-portrait']
-  const isBW = profile.id === 'hp5-editorial'
+  const images = profileImages[profile.id] ?? profileImages['warm-portrait']
+  const isBW = profile.id === 'editorial-bw'
 
   function shareResult() {
     if (navigator.share) {
-      navigator.share({ title: `my film match: ${profile.name}`, url: window.location.href })
+      navigator.share({ title: `my session match: ${profile.name}`, url: window.location.href })
     } else {
       navigator.clipboard.writeText(window.location.href)
     }
@@ -56,7 +56,7 @@ export default function QuizResult({ profile }: Props) {
       <section style={{ backgroundColor: 'var(--linen)', padding: '120px 0' }}>
         <div className="container-site">
           <AnimateIn>
-            <p className="t-eyebrow" style={{ marginBottom: 24 }}>your film session match</p>
+            <p className="t-eyebrow" style={{ marginBottom: 24 }}>your session match</p>
             <h1 className="t-display-1">{profile.name}</h1>
             <p className="t-body" style={{ marginTop: 24, maxWidth: 480 }}>
               {profile.description}

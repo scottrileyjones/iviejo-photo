@@ -29,10 +29,10 @@ export default function AboutTeaser() {
             <div>
               <span className="t-eyebrow">about the studio</span>
               <p className="t-body" style={{ marginTop: 24 }}>
-                we started shooting film because digital felt too easy. too forgiving. film forces decisions — 36 frames per roll, no preview, no delete.
+                we use modern digital cameras — but we shoot and edit the way analog photographers think. slow down, frame with intention, and make every image count before you press the shutter.
               </p>
               <p className="t-body" style={{ marginTop: 16 }}>
-                we&apos;re based in utah, which means red rock canyons, salt flats, and alpine light that no preset can replicate. we develop in-house and keep every negative.
+                we&apos;re based in utah, which means red rock canyons, salt flats, and alpine light that no preset can replicate. the grain, warmth, and depth in our work aren&apos;t filters — they&apos;re deliberate editing choices made by hand for every image.
               </p>
               <p className="t-body" style={{ marginTop: 16 }}>
                 what we&apos;re pushing against: the smoothed-out, over-edited, instagram-optimized portrait. what we&apos;re pushing toward: photographs that look like your actual life, just on its best day.
