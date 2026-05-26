@@ -26,7 +26,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section style={{ position: 'relative', height: '100vh', overflow: 'hidden', backgroundColor: 'var(--bone)' }}>
+    <section style={{ position: 'relative', height: '100vh', marginTop: -88, overflow: 'hidden', backgroundColor: 'var(--bone)' }}>
       {/* Background crossfade */}
       {heroImages.map((src, i) => (
         <div
