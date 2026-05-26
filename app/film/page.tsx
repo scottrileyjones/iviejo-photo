@@ -32,21 +32,21 @@ const looksExpanded = [
     feel: 'intimate · timeless',
     use: 'portraits · couples · golden hour',
     description: 'soft skin tones, rich shadows, golden warmth. we push the highlights warm and protect the shadows — it gives images a depth and glow that feels lived-in rather than processed.',
-    src: 'https://picsum.photos/seed/iviejo-warm/800/1000',
+    src: 'https://picsum.photos/id/550/800/1000',
   },
   {
     name: 'vivid & saturated',
     feel: 'dramatic · expansive',
     use: 'landscape · outdoor · high contrast',
     description: 'bold color, elevated contrast, made for open skies and utah red rock. when the landscape is as much the subject as the people in it. colors that feel real but heightened.',
-    src: 'https://picsum.photos/seed/iviejo-amber/800/1000',
+    src: 'https://picsum.photos/id/618/800/1000',
   },
   {
     name: 'editorial b&w',
     feel: 'raw · honest',
     use: 'b&w · editorial · timeless',
     description: 'stripped of color, stripped of distraction. we add film-grain texture and crush the blacks for a high-contrast look that finds the moment and holds it. timeless in a way color rarely is.',
-    src: 'https://picsum.photos/seed/iviejo-cool/800/1000',
+    src: 'https://picsum.photos/id/64/800/1000',
   },
 ]
 
@@ -57,7 +57,7 @@ export default function FilmPage() {
       <section style={{ position: 'relative', height: '70vh', overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://picsum.photos/seed/iviejo-amber/800/1000"
+          src="https://picsum.photos/id/618/800/1000"
           alt="our approach"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           className="photo"

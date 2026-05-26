@@ -2,11 +2,11 @@ import Link from 'next/link'
 import AnimateIn from '@/components/shared/AnimateIn'
 
 const featured = [
-  { title: 'Marisol', caption: 'Oaxaca · warm & golden', year: 2024, src: 'https://picsum.photos/seed/iviejo-f1/800/1000', href: '/gallery' },
-  { title: 'Carter & Elise', caption: 'Moab, Utah · vivid & saturated', year: 2024, src: 'https://picsum.photos/seed/iviejo-f2/800/1000', href: '/gallery' },
-  { title: 'The Andersons', caption: 'Salt Lake City · editorial b&w', year: 2025, src: 'https://picsum.photos/seed/iviejo-f3/800/1000', href: '/gallery' },
-  { title: 'Priya', caption: 'Bonneville Salt Flats · warm & golden', year: 2024, src: 'https://picsum.photos/seed/iviejo-f4/800/1000', href: '/gallery' },
-  { title: 'James & Sol', caption: 'Arches NP · vivid & saturated', year: 2025, src: 'https://picsum.photos/seed/iviejo-f5/800/1000', href: '/gallery' },
+  { title: 'Marisol', caption: 'Oaxaca · warm & golden', year: 2024, src: 'https://picsum.photos/id/64/800/1000', href: '/gallery' },
+  { title: 'Carter & Elise', caption: 'Moab, Utah · vivid & saturated', year: 2024, src: 'https://picsum.photos/id/659/800/1000', href: '/gallery' },
+  { title: 'The Andersons', caption: 'Salt Lake City · editorial b&w', year: 2025, src: 'https://picsum.photos/id/177/800/1000', href: '/gallery' },
+  { title: 'Priya', caption: 'Bonneville Salt Flats · warm & golden', year: 2024, src: 'https://picsum.photos/id/453/800/1000', href: '/gallery' },
+  { title: 'James & Sol', caption: 'Arches NP · vivid & saturated', year: 2025, src: 'https://picsum.photos/id/91/800/1000', href: '/gallery' },
 ]
 
 function ImageOverlay({ src, title, caption, href, size = 'md' }: { src: string; title: string; caption: string; href: string; size?: 'lg' | 'md' | 'sm' }) {
