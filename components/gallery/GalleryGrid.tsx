@@ -7,19 +7,21 @@ import Chip from '@/components/ui/Chip'
 
 const categories = ['all', 'portrait', 'couples', 'family', 'graduation', 'events', 'b&w']
 
-const shoots = [
-  { title: 'Marisol', category: 'portrait', location: 'Oaxaca', year: 2024, src: 'https://picsum.photos/seed/iviejo-g1/600/800', slug: 'marisol-oaxaca-2024' },
-  { title: 'Carter & Elise', category: 'couples', location: 'Moab, Utah', year: 2024, src: 'https://picsum.photos/seed/iviejo-g2/600/750', slug: 'carter-elise-moab-2024' },
-  { title: 'The Andersons', category: 'family', location: 'Salt Lake City', year: 2025, src: 'https://picsum.photos/seed/iviejo-g3/600/900', slug: 'andersons-slc-2025', bw: true },
-  { title: 'Priya', category: 'graduation', location: 'Bonneville Salt Flats', year: 2024, src: 'https://picsum.photos/seed/iviejo-g4/600/800', slug: 'priya-saltflats-2024' },
-  { title: 'James & Sol', category: 'couples', location: 'Arches NP', year: 2025, src: 'https://picsum.photos/seed/iviejo-g5/600/750', slug: 'james-sol-arches-2025' },
-  { title: 'Margot', category: 'portrait', location: 'Park City', year: 2025, src: 'https://picsum.photos/seed/iviejo-g6/600/800', slug: 'margot-parkcity-2025', bw: true },
-  { title: 'Rivera Family', category: 'family', location: 'Zion Canyon', year: 2025, src: 'https://picsum.photos/seed/iviejo-g7/600/900', slug: 'rivera-zion-2025' },
-  { title: 'Nadia', category: 'graduation', location: 'University of Utah', year: 2024, src: 'https://picsum.photos/seed/iviejo-g8/600/750', slug: 'nadia-uofu-2024' },
-  { title: 'Cedar Mesa', category: 'b&w', location: 'Bears Ears', year: 2025, src: 'https://picsum.photos/seed/iviejo-g9/600/800', slug: 'cedar-mesa-2025', bw: true },
-]
+export interface ShootItem {
+  title: string
+  category: string
+  location: string
+  year: number
+  src: string
+  slug: string
+  bw?: boolean
+}
 
-export default function GalleryGrid() {
+interface Props {
+  shoots: ShootItem[]
+}
+
+export default function GalleryGrid({ shoots }: Props) {
   const [active, setActive] = useState('all')
   const filtered = active === 'all' ? shoots : shoots.filter((s) => s.category === active)
 

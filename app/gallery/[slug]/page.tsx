@@ -1,32 +1,35 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import GalleryLightbox from '@/components/gallery/GalleryLightbox'
+import { isDriveConfigured, getShootImages } from '@/lib/drive'
 
-const shootData: Record<string, {
+export const revalidate = 60
+export const dynamicParams = true
+
+// Fallback static data — used when Drive is not configured
+const staticShootData: Record<string, {
   title: string
   location: string
   year: number
   camera: string
-  film_stock: string
-  film_format: string
+  look: string
   description: string
-  images: { src: string; alt: string; film_notes?: string }[]
+  images: { src: string; alt: string }[]
 }> = {
   'carter-elise-moab-2024': {
     title: 'Carter & Elise',
     location: 'Moab, Utah',
     year: 2024,
     camera: 'Sony A7R V',
-    film_stock: 'vivid & saturated',
-    film_format: 'digital',
+    look: 'vivid & saturated',
     description: 'shot over two days in the canyon. the light in late october in moab is unrepeatable — golden, long, and unforgiving in the best way.',
     images: [
-      { src: 'https://picsum.photos/seed/iviejo-cool/800/1000', alt: 'Carter & Elise, Moab' },
-      { src: 'https://picsum.photos/seed/iviejo-amber/800/1000', alt: 'Carter & Elise, Moab' },
-      { src: 'https://picsum.photos/seed/iviejo-warm/800/1000', alt: 'Carter & Elise, Moab' },
-      { src: 'https://picsum.photos/seed/iviejo-warm/800/1000', alt: 'Carter & Elise, Moab' },
-      { src: 'https://picsum.photos/seed/iviejo-amber/800/1000', alt: 'Carter & Elise, Moab' },
-      { src: 'https://picsum.photos/seed/iviejo-cool/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/id/659/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/id/91/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/id/64/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/id/453/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/id/550/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/id/577/800/1000', alt: 'Carter & Elise, Moab' },
     ],
   },
   'marisol-oaxaca-2024': {
@@ -34,24 +37,36 @@ const shootData: Record<string, {
     location: 'Oaxaca, Mexico',
     year: 2024,
     camera: 'Sony A7R V',
-    film_stock: 'warm & golden',
-    film_format: 'digital',
+    look: 'warm & golden',
     description: 'marisol wanted something that felt like a record — not a photo shoot. we wandered for half a day and let the city do most of the work.',
     images: [
-      { src: 'https://picsum.photos/seed/iviejo-warm/800/1000', alt: 'Marisol, Oaxaca' },
-      { src: 'https://picsum.photos/seed/iviejo-bw/800/1000', alt: 'Marisol, Oaxaca' },
-      { src: 'https://picsum.photos/seed/iviejo-bw/800/1000', alt: 'Marisol, Oaxaca' },
+      { src: 'https://picsum.photos/id/64/800/1000', alt: 'Marisol, Oaxaca' },
+      { src: 'https://picsum.photos/id/292/800/1000', alt: 'Marisol, Oaxaca' },
+      { src: 'https://picsum.photos/id/618/800/1000', alt: 'Marisol, Oaxaca' },
     ],
   },
 }
 
-export function generateStaticParams() {
-  return Object.keys(shootData).map((slug) => ({ slug }))
+export async function generateStaticParams() {
+  return Object.keys(staticShootData).map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const shoot = shootData[slug]
+
+  if (isDriveConfigured()) {
+    try {
+      const shoot = await getShootImages(slug)
+      if (shoot) {
+        return {
+          title: `${shoot.meta.title} — ${shoot.meta.location}, ${shoot.meta.year}`,
+          description: shoot.meta.description,
+        }
+      }
+    } catch { /* fall through */ }
+  }
+
+  const shoot = staticShootData[slug]
   if (!shoot) return { title: 'shoot not found' }
   return {
     title: `${shoot.title} — ${shoot.location}, ${shoot.year}`,
@@ -61,7 +76,37 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ShootPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const shoot = shootData[slug]
+
+  let shoot: {
+    title: string; location: string; year: number; camera: string
+    look: string; description: string
+    images: { src: string; alt: string }[]
+  } | null = null
+
+  if (isDriveConfigured()) {
+    try {
+      const driveShoot = await getShootImages(slug)
+      if (driveShoot) {
+        shoot = {
+          title: driveShoot.meta.title,
+          location: driveShoot.meta.location,
+          year: driveShoot.meta.year,
+          camera: driveShoot.meta.camera,
+          look: driveShoot.meta.look,
+          description: driveShoot.meta.description,
+          images: driveShoot.images.map((img) => ({
+            src: `/api/drive-image/${img.id}`,
+            alt: img.alt,
+          })),
+        }
+      }
+    } catch { /* fall through to static */ }
+  }
+
+  if (!shoot) {
+    const s = staticShootData[slug]
+    shoot = s ? { ...s } : null
+  }
 
   if (!shoot) {
     return (
@@ -77,7 +122,6 @@ export default async function ShootPage({ params }: { params: Promise<{ slug: st
   return (
     <div style={{ padding: '80px 0 120px' }}>
       <div className="container-site">
-        {/* Header */}
         <div style={{ marginBottom: 64, maxWidth: 720 }}>
           <Link
             href="/gallery"
@@ -88,20 +132,18 @@ export default async function ShootPage({ params }: { params: Promise<{ slug: st
           </Link>
           <h1 className="t-h1">{shoot.title}</h1>
           <p className="t-caption" style={{ marginTop: 12 }}>
-            {shoot.location} · {shoot.year} · {shoot.camera}
+            {shoot.location} · {shoot.year}{shoot.camera ? ` · ${shoot.camera}` : ''}
           </p>
           <p className="t-caption" style={{ marginTop: 6, color: 'var(--slate)' }}>
-            edited in the {shoot.film_stock} look. every image hand-edited.
+            edited in the {shoot.look} look. every image hand-edited.
           </p>
           {shoot.description && (
             <p className="t-body" style={{ marginTop: 24 }}>{shoot.description}</p>
           )}
         </div>
 
-        {/* Lightbox grid */}
         <GalleryLightbox images={shoot.images} />
 
-        {/* End CTA */}
         <div style={{ marginTop: 80, borderTop: '1px solid var(--putty)', paddingTop: 64, textAlign: 'center' }}>
           <p className="t-eyebrow" style={{ marginBottom: 16 }}>want something like this?</p>
           <Link href="/quiz" className="btn-outline">

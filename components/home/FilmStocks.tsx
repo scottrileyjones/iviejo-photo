@@ -1,9 +1,9 @@
 import AnimateIn from '@/components/shared/AnimateIn'
 
 const looks = [
-  { name: 'warm\n& golden', feel: 'intimate · timeless', src: 'https://picsum.photos/seed/iviejo-warm/600/800' },
-  { name: 'vivid\n& saturated', feel: 'dramatic · expansive', src: 'https://picsum.photos/seed/iviejo-vivid/600/800' },
-  { name: 'editorial\nb&w', feel: 'raw · honest', src: 'https://picsum.photos/seed/iviejo-bw/600/800' },
+  { name: 'warm\n& golden', feel: 'intimate · timeless', src: 'https://picsum.photos/id/550/600/800' },
+  { name: 'vivid\n& saturated', feel: 'dramatic · expansive', src: 'https://picsum.photos/id/618/600/800' },
+  { name: 'editorial\nb&w', feel: 'raw · honest', src: 'https://picsum.photos/id/292/600/800' },
 ]
 
 export default function FilmStocks() {

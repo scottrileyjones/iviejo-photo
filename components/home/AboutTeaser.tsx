@@ -8,7 +8,7 @@ export default function AboutTeaser() {
       <div style={{ position: 'relative', overflow: 'hidden', height: '70vw', maxHeight: '70vh', minHeight: 280 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://picsum.photos/seed/iviejo-about/1400/900"
+          src="https://picsum.photos/id/674/1400/900"
           alt="the studio"
           className="photo"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}

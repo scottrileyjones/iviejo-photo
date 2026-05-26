@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://picsum.photos/seed/iviejo-about2/1400/700"
+            src="https://picsum.photos/id/577/1400/700"
             alt="the studio"
             className="photo"
             style={{ width: '100%', height: '60vw', maxHeight: '70vh', minHeight: 240, objectFit: 'cover', display: 'block' }}

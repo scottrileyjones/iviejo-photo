@@ -8,29 +8,29 @@ import AnimateIn from '@/components/shared/AnimateIn'
 
 const profileImages: Record<string, string[]> = {
   'warm-portrait': [
-    'https://picsum.photos/seed/iviejo-warm/800/1000',
-    'https://picsum.photos/seed/iviejo-bw/800/1000',
-    'https://picsum.photos/seed/iviejo-cool/800/1000',
+    'https://picsum.photos/id/550/800/1000',
+    'https://picsum.photos/id/292/800/1000',
+    'https://picsum.photos/id/64/800/1000',
   ],
   'vivid-wanderer': [
-    'https://picsum.photos/seed/iviejo-amber/800/1000',
-    'https://picsum.photos/seed/iviejo-warm/800/1000',
-    'https://picsum.photos/seed/iviejo-bw/800/1000',
+    'https://picsum.photos/id/618/800/1000',
+    'https://picsum.photos/id/550/800/1000',
+    'https://picsum.photos/id/292/800/1000',
   ],
   'editorial-bw': [
-    'https://picsum.photos/seed/iviejo-cool/800/1000',
-    'https://picsum.photos/seed/iviejo-amber/800/1000',
-    'https://picsum.photos/seed/iviejo-warm/800/1000',
+    'https://picsum.photos/id/64/800/1000',
+    'https://picsum.photos/id/618/800/1000',
+    'https://picsum.photos/id/550/800/1000',
   ],
   'golden-session': [
-    'https://picsum.photos/seed/iviejo-amber/800/1000',
-    'https://picsum.photos/seed/iviejo-bw/800/1000',
-    'https://picsum.photos/seed/iviejo-warm/800/1000',
+    'https://picsum.photos/id/618/800/1000',
+    'https://picsum.photos/id/292/800/1000',
+    'https://picsum.photos/id/550/800/1000',
   ],
   'heirloom-session': [
-    'https://picsum.photos/seed/iviejo-warm/800/1000',
-    'https://picsum.photos/seed/iviejo-warm/800/1000',
-    'https://picsum.photos/seed/iviejo-cool/800/1000',
+    'https://picsum.photos/id/550/800/1000',
+    'https://picsum.photos/id/550/800/1000',
+    'https://picsum.photos/id/64/800/1000',
   ],
 }
 
