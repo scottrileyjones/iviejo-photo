@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80"
+            src="/placeholder-bw.svg"
             alt="the studio"
             className="photo"
             style={{ width: '100%', height: '70vh', objectFit: 'cover', display: 'block' }}

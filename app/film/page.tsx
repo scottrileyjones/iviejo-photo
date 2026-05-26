@@ -33,7 +33,7 @@ const stocksExpanded = [
     format: '35mm · medium format',
     use: 'portraits · couples · golden hour',
     description: 'the most forgiving film stock we know. warm skin tones, wide latitude — you can pull a stop under or push a stop over and it handles it gracefully. our go-to for couples and family sessions.',
-    src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80',
+    src: '/placeholder-cool.svg',
   },
   {
     name: 'Kodak Ektar 100',
@@ -41,7 +41,7 @@ const stocksExpanded = [
     format: '35mm',
     use: 'landscape · outdoor · high contrast',
     description: 'vivid, saturated, precise. for utah red rock and open sky sessions where we want the landscape to be as much a subject as the people. needs light — shoots beautifully in full sun.',
-    src: 'https://images.unsplash.com/photo-1502252430442-aac78f397426?w=800&q=80',
+    src: '/placeholder-amber.svg',
   },
   {
     name: 'Ilford HP5+',
@@ -49,7 +49,7 @@ const stocksExpanded = [
     format: '35mm · medium format',
     use: 'b&w · editorial · street',
     description: 'raw and honest. we push this stock one stop for high contrast and grain. black and white photography has a timelessness that color can\'t replicate — it removes distraction and finds the moment.',
-    src: 'https://images.unsplash.com/photo-1523264766099-e4c6aff2e2cf?w=800&q=80',
+    src: '/placeholder-cool.svg',
   },
 ]
 
@@ -60,7 +60,7 @@ export default function FilmPage() {
       <section style={{ position: 'relative', height: '70vh', overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1600&q=80"
+          src="/placeholder-amber.svg"
           alt="film photography"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           className="photo"
@@ -137,7 +137,7 @@ export default function FilmPage() {
                 <div style={{ aspectRatio: '4/5', overflow: 'hidden' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80"
+                    src="/placeholder-warm.svg"
                     alt="film"
                     className="photo"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -151,7 +151,7 @@ export default function FilmPage() {
                 <div style={{ aspectRatio: '4/5', overflow: 'hidden' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80"
+                    src="/placeholder-bw.svg"
                     alt="digital equivalent"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'contrast(1.05) saturate(1.15) brightness(1.05)' }}
                   />
