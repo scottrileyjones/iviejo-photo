@@ -8,18 +8,23 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <div style={{ padding: '80px 0 120px' }}>
-      <div className="container-site">
-        <div style={{ marginBottom: 64 }}>
-          <span className="t-eyebrow">work</span>
-          <h1 className="t-h1" style={{ marginTop: 16 }}>
-            all sessions
-          </h1>
-          <p className="t-body" style={{ marginTop: 16, maxWidth: 480, color: 'var(--graphite)' }}>
-            shot with intention. edited by hand. every image is a deliberate choice — real grain, real warmth, real depth.
-          </p>
+    <div>
+      {/* Large editorial header */}
+      <section style={{ padding: '100px 0 80px', backgroundColor: 'var(--bone)' }}>
+        <div className="container-site">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'flex-end', gap: 80, paddingBottom: 64, borderBottom: '1px solid var(--putty)' }}>
+            <h1 className="t-display-1" style={{ color: 'var(--ink)' }}>all<br /><span style={{ fontStyle: 'italic' }}>sessions.</span></h1>
+            <p className="t-body" style={{ color: 'var(--graphite)', paddingBottom: 8 }}>
+              shot with intention. edited by hand. every image a deliberate choice — real grain, real warmth, real depth.
+            </p>
+          </div>
         </div>
-        <GalleryGrid />
+      </section>
+
+      <div style={{ padding: '64px 0 160px', backgroundColor: 'var(--bone)' }}>
+        <div className="container-site">
+          <GalleryGrid />
+        </div>
       </div>
     </div>
   )

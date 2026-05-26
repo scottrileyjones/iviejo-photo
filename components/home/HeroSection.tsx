@@ -5,58 +5,71 @@ export default function HeroSection() {
     <section
       style={{
         marginTop: -88,
-        paddingTop: 88,
         minHeight: '100vh',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
         backgroundColor: 'var(--bone)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        padding: '88px 40px 80px',
       }}
     >
-      <span
+      {/* Left: text */}
+      <div
         style={{
-          fontFamily: 'var(--font-mono)',
-          fontSize: 10,
-          color: 'var(--slate)',
-          letterSpacing: '0.14em',
-          textTransform: 'uppercase',
-          marginBottom: 40,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          padding: '160px 64px 100px 40px',
         }}
       >
-        utah · cinematic · 2026
-      </span>
+        <span
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: 10,
+            color: 'var(--slate)',
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            marginBottom: 48,
+            display: 'block',
+          }}
+        >
+          utah · cinematic · 2026
+        </span>
 
-      <h1
-        className="t-hero"
-        style={{
-          color: 'var(--ink)',
-        }}
-      >
-        light &amp;<br />
-        <span style={{ color: 'var(--forest)' }}>form.</span>
-      </h1>
+        <h1 className="t-hero" style={{ color: 'var(--ink)' }}>
+          light &amp;<br />
+          <span style={{ color: 'var(--forest)', fontStyle: 'italic' }}>form.</span>
+        </h1>
 
-      <p
-        className="t-body"
-        style={{
-          marginTop: 32,
-          maxWidth: 440,
-          color: 'var(--graphite)',
-        }}
-      >
-        cinematic portrait photography for couples, families &amp; milestones. utah.
-      </p>
+        <p
+          className="t-body"
+          style={{ marginTop: 40, maxWidth: 380, color: 'var(--graphite)' }}
+        >
+          cinematic portrait photography for couples, families &amp; milestones. utah.
+        </p>
 
-      <div style={{ display: 'flex', gap: 16, marginTop: 48, flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Link href="/gallery" className="btn-primary">
-          view the work
-        </Link>
-        <Link href="/quiz" className="btn-outline">
-          find your session
-        </Link>
+        <div style={{ display: 'flex', gap: 16, marginTop: 48, flexWrap: 'wrap' }}>
+          <Link href="/gallery" className="btn-primary">
+            view the work
+          </Link>
+          <Link href="/quiz" className="btn-outline">
+            find your session
+          </Link>
+        </div>
+      </div>
+
+      {/* Right: full-height image */}
+      <div style={{ position: 'relative', overflow: 'hidden' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/placeholder-warm.svg"
+          alt=""
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        />
       </div>
     </section>
   )
