@@ -35,7 +35,7 @@ export default function Footer() {
           <div>
             <p className="t-eyebrow" style={{ color: 'var(--slate)', marginBottom: 16 }}>follow</p>
             <a
-              href="https://instagram.com/iviejophoto"
+              href="https://www.instagram.com/iviejo.photo"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--stone)', textDecoration: 'none', marginBottom: 10 }}
