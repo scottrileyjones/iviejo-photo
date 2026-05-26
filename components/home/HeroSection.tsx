@@ -65,7 +65,7 @@ export default function HeroSection() {
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: 10,
-            color: 'var(--slate)',
+            color: 'rgba(246,242,236,0.6)',
             letterSpacing: '0.02em',
           }}
         >
@@ -87,12 +87,12 @@ export default function HeroSection() {
           padding: '0 40px',
         }}
       >
-        <h1 className="t-hero" style={{ color: 'var(--ink)' }}>
+        <h1 className="t-hero" style={{ color: 'var(--bone)' }}>
           light &amp;<br />form.
         </h1>
         <p
           className="t-body"
-          style={{ marginTop: 32, maxWidth: 440, color: 'var(--graphite)' }}
+          style={{ marginTop: 32, maxWidth: 440, color: 'rgba(246,242,236,0.85)' }}
         >
           analog portrait photography for couples, families &amp; milestones. utah.
         </p>
@@ -100,7 +100,7 @@ export default function HeroSection() {
           <Link href="/gallery" className="btn-primary">
             view the work
           </Link>
-          <Link href="/quiz" className="btn-outline">
+          <Link href="/quiz" className="btn-outline" style={{ color: 'var(--bone)', borderColor: 'rgba(246,242,236,0.5)' }}>
             find your session
           </Link>
         </div>
