@@ -43,7 +43,7 @@ export default function Footer() {
               instagram
             </a>
             <a
-              href="https://tiktok.com/@iviejophoto"
+              href="https://www.tiktok.com/@ivieespams2"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--stone)', textDecoration: 'none' }}
