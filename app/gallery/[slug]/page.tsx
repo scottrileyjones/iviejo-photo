@@ -16,9 +16,9 @@ const shootData: Record<string, {
     title: 'Carter & Elise',
     location: 'Moab, Utah',
     year: 2024,
-    camera: 'Hasselblad 500C/M',
-    film_stock: 'Kodak Ektar 100',
-    film_format: 'medium format',
+    camera: 'Sony A7R V',
+    film_stock: 'vivid & saturated',
+    film_format: 'digital',
     description: 'shot over two days in the canyon. the light in late october in moab is unrepeatable — golden, long, and unforgiving in the best way.',
     images: [
       { src: '/placeholder-cool.svg', alt: 'Carter & Elise, Moab' },
@@ -33,9 +33,9 @@ const shootData: Record<string, {
     title: 'Marisol',
     location: 'Oaxaca, Mexico',
     year: 2024,
-    camera: 'Nikon F3',
-    film_stock: 'Kodak Portra 400',
-    film_format: '35mm',
+    camera: 'Sony A7R V',
+    film_stock: 'warm & golden',
+    film_format: 'digital',
     description: 'marisol wanted something that felt like a record — not a photo shoot. we wandered for half a day and let the city do most of the work.',
     images: [
       { src: '/placeholder-warm.svg', alt: 'Marisol, Oaxaca' },
@@ -88,10 +88,10 @@ export default async function ShootPage({ params }: { params: Promise<{ slug: st
           </Link>
           <h1 className="t-h1">{shoot.title}</h1>
           <p className="t-caption" style={{ marginTop: 12 }}>
-            {shoot.location} · {shoot.year} · {shoot.camera} · {shoot.film_stock}
+            {shoot.location} · {shoot.year} · {shoot.camera}
           </p>
           <p className="t-caption" style={{ marginTop: 6, color: 'var(--slate)' }}>
-            all images shot on {shoot.film_stock}. developed in-house.
+            edited in the {shoot.film_stock} look. every image hand-edited.
           </p>
           {shoot.description && (
             <p className="t-body" style={{ marginTop: 24 }}>{shoot.description}</p>

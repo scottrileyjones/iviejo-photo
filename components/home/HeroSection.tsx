@@ -26,7 +26,7 @@ export default function HeroSection() {
           marginBottom: 40,
         }}
       >
-        utah · 35mm · 2026
+        utah · cinematic · 2026
       </span>
 
       <h1
@@ -47,7 +47,7 @@ export default function HeroSection() {
           color: 'var(--graphite)',
         }}
       >
-        analog portrait photography for couples, families &amp; milestones. utah.
+        cinematic portrait photography for couples, families &amp; milestones. utah.
       </p>
 
       <div style={{ display: 'flex', gap: 16, marginTop: 48, flexWrap: 'wrap', justifyContent: 'center' }}>

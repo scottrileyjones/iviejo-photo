@@ -8,8 +8,8 @@ import Testimonials from '@/components/home/Testimonials'
 import QuizCTA from '@/components/home/QuizCTA'
 
 export const metadata: Metadata = {
-  title: 'iviejo photo — analog film photography, utah',
-  description: 'utah-based analog film photographer specializing in portraits, couples, families & milestones. shot on 35mm and medium format. developed in-house.',
+  title: 'iviejo photo — cinematic portrait photography, utah',
+  description: 'utah-based cinematic portrait photographer specializing in couples, families & milestones. modern digital capture with analog-inspired editing.',
 }
 
 export default function HomePage() {

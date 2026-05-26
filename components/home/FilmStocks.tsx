@@ -1,26 +1,23 @@
 import AnimateIn from '@/components/shared/AnimateIn'
 
-const stocks = [
+const looks = [
   {
-    name: 'Kodak Portra 400',
-    description: 'for couples and portraits. warm skin tones, forgiving latitude.',
-    iso: 'ISO 400',
-    format: '35mm · medium format',
+    name: 'warm & golden',
+    description: 'soft skin tones, rich shadows, golden warmth. our go-to look for couples and families in natural light.',
+    feel: 'intimate · timeless',
     use: 'portraits · couples · golden hour',
   },
   {
-    name: 'Kodak Ektar 100',
-    description: 'for landscapes and utah red rock. vivid, made for outdoor light.',
-    iso: 'ISO 100',
-    format: '35mm',
+    name: 'vivid & saturated',
+    description: 'bold color, high contrast, made for open skies and utah red rock. when the landscape is as much the subject as the people.',
+    feel: 'dramatic · expansive',
     use: 'landscape · outdoor · high contrast',
   },
   {
-    name: 'Ilford HP5+',
-    description: 'black and white. high contrast. raw and honest.',
-    iso: 'ISO 400',
-    format: '35mm · medium format',
-    use: 'b&w · editorial · street',
+    name: 'editorial b&w',
+    description: 'stripped of color, stripped of distraction. high contrast black and white that finds the moment and holds it.',
+    feel: 'raw · honest',
+    use: 'b&w · editorial · timeless',
   },
 ]
 
@@ -29,7 +26,7 @@ export default function FilmStocks() {
     <section style={{ backgroundColor: 'var(--linen)', padding: '120px 0' }}>
       <div className="container-site">
         <AnimateIn>
-          <span className="t-eyebrow">the stocks we trust</span>
+          <span className="t-eyebrow">our signature looks</span>
         </AnimateIn>
 
         <div
@@ -40,8 +37,8 @@ export default function FilmStocks() {
             marginTop: 48,
           }}
         >
-          {stocks.map((stock, i) => (
-            <AnimateIn key={stock.name} delay={i * 80}>
+          {looks.map((look, i) => (
+            <AnimateIn key={look.name} delay={i * 80}>
               <div
                 style={{
                   borderTop: '1px solid var(--stone)',
@@ -52,13 +49,13 @@ export default function FilmStocks() {
                   paddingLeft: i > 0 ? 40 : 0,
                 }}
               >
-                <h3 className="t-h3">{stock.name}</h3>
+                <h3 className="t-h3">{look.name}</h3>
                 <p className="t-body" style={{ marginTop: 16, color: 'var(--graphite)' }}>
-                  {stock.description}
+                  {look.description}
                 </p>
                 <div style={{ marginTop: 24 }}>
-                  <span className="t-caption" style={{ display: 'block' }}>{stock.iso} · {stock.format}</span>
-                  <span className="t-caption" style={{ display: 'block', marginTop: 4 }}>{stock.use}</span>
+                  <span className="t-caption" style={{ display: 'block' }}>{look.feel}</span>
+                  <span className="t-caption" style={{ display: 'block', marginTop: 4 }}>{look.use}</span>
                 </div>
               </div>
             </AnimateIn>

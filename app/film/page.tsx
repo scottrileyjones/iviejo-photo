@@ -3,52 +3,49 @@ import Link from 'next/link'
 import AnimateIn from '@/components/shared/AnimateIn'
 
 export const metadata: Metadata = {
-  title: 'why film',
-  description: 'why analog film photography still matters. the grain, the latitude, the physicality. it is not a filter.',
+  title: 'our approach',
+  description: 'how we achieve the cinematic film look using modern digital cameras and analog-inspired shooting and editing techniques.',
 }
 
 const faq = [
   {
     q: 'how long until i get my photos?',
-    a: 'typically 4–6 weeks. film takes time. it\'s worth it.',
+    a: 'typically 2–3 weeks. every image is edited individually — no batch exports.',
   },
   {
     q: 'will they look like instagram filters?',
-    a: 'no. better.',
+    a: 'no. better. filters are uniform. our edits are made for each image individually.',
   },
   {
-    q: 'is film more expensive?',
-    a: 'yes. a roll of portra 400 is $25. development is $20. we factor this in honestly.',
+    q: 'do you shoot on actual film?',
+    a: 'no — we use modern digital cameras, but we shoot and edit with analog techniques and aesthetics. the grain, warmth, and depth are deliberate editing choices, not a film stock.',
   },
   {
-    q: 'what if something goes wrong with the film?',
-    a: 'we shoot redundant rolls for every session and use a professional lab with a 20-year track record.',
+    q: 'can i choose my look?',
+    a: 'yes. take the style quiz and we\'ll match you with the right aesthetic for your session and location.',
   },
 ]
 
-const stocksExpanded = [
+const looksExpanded = [
   {
-    name: 'Kodak Portra 400',
-    iso: 'ISO 400',
-    format: '35mm · medium format',
+    name: 'warm & golden',
+    feel: 'intimate · timeless',
     use: 'portraits · couples · golden hour',
-    description: 'the most forgiving film stock we know. warm skin tones, wide latitude — you can pull a stop under or push a stop over and it handles it gracefully. our go-to for couples and family sessions.',
-    src: '/placeholder-cool.svg',
+    description: 'soft skin tones, rich shadows, golden warmth. we push the highlights warm and protect the shadows — it gives images a depth and glow that feels lived-in rather than processed.',
+    src: '/placeholder-warm.svg',
   },
   {
-    name: 'Kodak Ektar 100',
-    iso: 'ISO 100',
-    format: '35mm',
+    name: 'vivid & saturated',
+    feel: 'dramatic · expansive',
     use: 'landscape · outdoor · high contrast',
-    description: 'vivid, saturated, precise. for utah red rock and open sky sessions where we want the landscape to be as much a subject as the people. needs light — shoots beautifully in full sun.',
+    description: 'bold color, elevated contrast, made for open skies and utah red rock. when the landscape is as much the subject as the people in it. colors that feel real but heightened.',
     src: '/placeholder-amber.svg',
   },
   {
-    name: 'Ilford HP5+',
-    iso: 'ISO 400',
-    format: '35mm · medium format',
-    use: 'b&w · editorial · street',
-    description: 'raw and honest. we push this stock one stop for high contrast and grain. black and white photography has a timelessness that color can\'t replicate — it removes distraction and finds the moment.',
+    name: 'editorial b&w',
+    feel: 'raw · honest',
+    use: 'b&w · editorial · timeless',
+    description: 'stripped of color, stripped of distraction. we add film-grain texture and crush the blacks for a high-contrast look that finds the moment and holds it. timeless in a way color rarely is.',
     src: '/placeholder-cool.svg',
   },
 ]
@@ -61,7 +58,7 @@ export default function FilmPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/placeholder-amber.svg"
-          alt="film photography"
+          alt="our approach"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           className="photo"
         />
@@ -76,7 +73,7 @@ export default function FilmPage() {
         >
           <div className="container-site" style={{ paddingBottom: 80 }}>
             <h1 className="t-display-1" style={{ color: 'var(--ink)' }}>
-              why does it matter<br />that it&apos;s real film?
+              why does it look<br />the way it does?
             </h1>
           </div>
         </div>
@@ -88,36 +85,34 @@ export default function FilmPage() {
           <div style={{ maxWidth: '56ch', margin: '0 auto' }}>
             <AnimateIn>
               <div style={{ marginBottom: 64 }}>
-                <p className="t-eyebrow" style={{ marginBottom: 20 }}>slowing down</p>
+                <p className="t-eyebrow" style={{ marginBottom: 20 }}>the tools</p>
                 <p className="t-body">
-                  film slows everything down. 36 exposures. every frame is a decision.
-                  when you can&apos;t just spray and pray, you pay attention differently —
-                  to the light, to the subject, to the moment about to happen.
-                  that attention shows up in the final print.
+                  we shoot on modern digital cameras. full stop. but the camera is just a tool —
+                  what matters is how you see, how you move, and what you do with the image afterward.
+                  we use digital because it lets us focus entirely on the moment rather than the mechanics.
                 </p>
               </div>
             </AnimateIn>
 
             <AnimateIn delay={100}>
               <div style={{ marginBottom: 64 }}>
-                <p className="t-eyebrow" style={{ marginBottom: 20 }}>the physics of light</p>
+                <p className="t-eyebrow" style={{ marginBottom: 20 }}>the intention</p>
                 <p className="t-body">
-                  film responds to light differently. the latitude, the grain, the color —
-                  these are physical properties of silver halide crystals, not a slider in lightroom.
-                  the warmth in a portra portrait or the grain in an hp5 black and white
-                  can&apos;t be fully replicated digitally because they aren&apos;t stylistic choices.
-                  they are the material itself.
+                  we shoot with analog discipline — fewer frames, more thought. rather than firing
+                  hundreds of shots and sorting later, we slow down, read the light, and wait for the
+                  moment. that intention shows up in the final image in ways that volume shooting never can.
                 </p>
               </div>
             </AnimateIn>
 
             <AnimateIn delay={200}>
               <div>
-                <p className="t-eyebrow" style={{ marginBottom: 20 }}>the negative</p>
+                <p className="t-eyebrow" style={{ marginBottom: 20 }}>the edit</p>
                 <p className="t-body">
-                  a film photograph has a body. a negative. something that exists in the world.
-                  your great-grandchildren could, in principle, hold the original negative and print
-                  a new photograph from it. there is no digital equivalent of that. that matters.
+                  the grain, warmth, and cinematic depth you see in our work aren&apos;t presets or filters.
+                  every image is edited individually — color graded by hand, grain added deliberately,
+                  highlights and shadows shaped to match the feeling of the moment.
+                  it&apos;s the analog aesthetic achieved through modern craft.
                 </p>
               </div>
             </AnimateIn>
@@ -125,57 +120,19 @@ export default function FilmPage() {
         </div>
       </section>
 
-      {/* Film vs. Digital */}
-      <section style={{ backgroundColor: 'var(--linen)', padding: '120px 0' }}>
+      {/* Looks expanded */}
+      <section style={{ padding: '120px 0', backgroundColor: 'var(--linen)' }}>
         <div className="container-site">
           <AnimateIn>
-            <span className="t-eyebrow" style={{ marginBottom: 48, display: 'block' }}>film vs. digital — same scene</span>
-          </AnimateIn>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-            <AnimateIn>
-              <div>
-                <div style={{ aspectRatio: '4/5', overflow: 'hidden' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/placeholder-warm.svg"
-                    alt="film"
-                    className="photo"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                </div>
-                <p className="t-caption" style={{ marginTop: 12 }}>[ film ]</p>
-              </div>
-            </AnimateIn>
-            <AnimateIn delay={80}>
-              <div>
-                <div style={{ aspectRatio: '4/5', overflow: 'hidden' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/placeholder-bw.svg"
-                    alt="digital equivalent"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'contrast(1.05) saturate(1.15) brightness(1.05)' }}
-                  />
-                </div>
-                <p className="t-caption" style={{ marginTop: 12 }}>[ digital ]</p>
-              </div>
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Stocks expanded */}
-      <section style={{ padding: '120px 0', backgroundColor: 'var(--bone)' }}>
-        <div className="container-site">
-          <AnimateIn>
-            <span className="t-eyebrow" style={{ marginBottom: 48, display: 'block' }}>the stocks we trust</span>
+            <span className="t-eyebrow" style={{ marginBottom: 48, display: 'block' }}>our signature looks</span>
           </AnimateIn>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 80 }}>
-            {stocksExpanded.map((stock, i) => (
-              <AnimateIn key={stock.name} delay={i * 80}>
+            {looksExpanded.map((look, i) => (
+              <AnimateIn key={look.name} delay={i * 80}>
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: i % 2 === 0 ? '1fr 1fr' : '1fr 1fr',
+                    gridTemplateColumns: '1fr 1fr',
                     gap: 64,
                     alignItems: 'center',
                   }}
@@ -183,19 +140,17 @@ export default function FilmPage() {
                   <div style={{ order: i % 2 === 0 ? 1 : 2, aspectRatio: '3/4', overflow: 'hidden' }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={stock.src}
-                      alt={stock.name}
+                      src={look.src}
+                      alt={look.name}
                       className="photo"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </div>
                   <div style={{ order: i % 2 === 0 ? 2 : 1 }}>
-                    <h3 className="t-h3">{stock.name}</h3>
-                    <span className="t-caption" style={{ display: 'block', marginTop: 8 }}>
-                      {stock.iso} · {stock.format}
-                    </span>
-                    <p className="t-body" style={{ marginTop: 24 }}>{stock.description}</p>
-                    <span className="t-caption" style={{ display: 'block', marginTop: 16 }}>{stock.use}</span>
+                    <h3 className="t-h3">{look.name}</h3>
+                    <span className="t-caption" style={{ display: 'block', marginTop: 8 }}>{look.feel}</span>
+                    <p className="t-body" style={{ marginTop: 24 }}>{look.description}</p>
+                    <span className="t-caption" style={{ display: 'block', marginTop: 16 }}>{look.use}</span>
                   </div>
                 </div>
               </AnimateIn>
@@ -205,7 +160,7 @@ export default function FilmPage() {
       </section>
 
       {/* FAQ */}
-      <section style={{ backgroundColor: 'var(--linen)', padding: '120px 0' }}>
+      <section style={{ backgroundColor: 'var(--bone)', padding: '120px 0' }}>
         <div className="container-site">
           <AnimateIn>
             <span className="t-eyebrow" style={{ marginBottom: 48, display: 'block' }}>common questions</span>
@@ -241,13 +196,13 @@ export default function FilmPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ backgroundColor: 'var(--bone)', padding: '120px 0', textAlign: 'center' }}>
+      <section style={{ backgroundColor: 'var(--linen)', padding: '120px 0', textAlign: 'center' }}>
         <div className="container-site">
           <AnimateIn>
-            <h2 className="t-h1">ready to shoot on film?</h2>
+            <h2 className="t-h1">ready to book a session?</h2>
             <div style={{ marginTop: 40 }}>
               <Link href="/quiz" className="btn-accent">
-                book a film session
+                find your look
               </Link>
             </div>
           </AnimateIn>

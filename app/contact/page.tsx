@@ -116,7 +116,7 @@ export default function ContactPage() {
                   tiktok
                 </a>
                 <p className="t-caption" style={{ marginTop: 32 }}>
-                  all sessions shot on analog film. 35mm and medium format.
+                  cinematic digital photography with analog-inspired editing.
                 </p>
               </div>
             </div>

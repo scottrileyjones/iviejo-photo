@@ -14,7 +14,7 @@ export default function FilmManifesto() {
               fontStyle: 'normal',
             }}
           >
-            &ldquo;we shoot on film. we develop in-house. we take our time.&rdquo;
+            &ldquo;we shoot with intention. we edit with soul. we take our time.&rdquo;
           </blockquote>
         </AnimateIn>
 
@@ -29,8 +29,8 @@ export default function FilmManifesto() {
             }}
           >
             {[
-              'shot on real film',
-              'developed by hand',
+              'shot with intention',
+              'edited by hand',
               'no presets. ever.',
             ].map((label) => (
               <span key={label} className="t-eyebrow">{label}</span>
@@ -41,7 +41,7 @@ export default function FilmManifesto() {
         <AnimateIn delay={200}>
           <div style={{ marginTop: 48 }}>
             <Link href="/film" className="t-link">
-              why film matters →
+              our approach →
             </Link>
           </div>
         </AnimateIn>

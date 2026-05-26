@@ -10,15 +10,15 @@ export default function Footer() {
           <div>
             <Wordmark size="md" variant="light" />
             <p className="t-caption" style={{ color: 'var(--slate)', marginTop: 16, lineHeight: 1.6 }}>
-              utah-based analog film photography.<br />
-              we shoot on real film.
+              utah-based cinematic portrait photography.<br />
+              digital capture. analog soul.
             </p>
           </div>
           <div>
             <p className="t-eyebrow" style={{ color: 'var(--slate)', marginBottom: 16 }}>pages</p>
             {[
               { href: '/gallery', label: 'work' },
-              { href: '/film', label: 'why film' },
+              { href: '/film', label: 'our approach' },
               { href: '/about', label: 'about' },
               { href: '/quiz', label: 'style quiz' },
               { href: '/contact', label: 'contact' },
@@ -55,7 +55,7 @@ export default function Footer() {
         <hr style={{ border: 0, borderTop: '1px solid rgba(201, 194, 184, 0.2)', marginBottom: 32 }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
           <p className="t-caption" style={{ color: 'var(--slate)' }}>
-            all sessions shot on analog film. 35mm and medium format.
+            cinematic digital photography with analog-inspired editing.
           </p>
           <p className="t-caption" style={{ color: 'var(--slate)' }}>
             {availability.bookingLabel}
