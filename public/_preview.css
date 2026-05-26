@@ -1,0 +1,16 @@
+/* Shared base for design-system preview cards */
+@import url('../colors_and_type.css');
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body { padding: 28px 32px; box-sizing: border-box; }
+.card-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.swatch {
+  width: 96px; height: 96px; border-radius: 2px; flex: none;
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 8px;
+  box-sizing: border-box; color: var(--bone); font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.02em; line-height: 1.2;
+}
+.swatch .hex { opacity: 0.75; }
+.swatch.light { color: var(--ink); }
+.label-block { display: flex; flex-direction: column; gap: 2px; }
+.label-block .name { font-family: var(--font-sans); font-weight: 500; font-size: 13px; color: var(--ink); }
+.label-block .meta { font-family: var(--font-mono); font-size: 11px; color: var(--slate); }
