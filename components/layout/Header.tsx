@@ -22,7 +22,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const transparent = !scrolled && !open
+  const transparent = false
 
   return (
     <header
