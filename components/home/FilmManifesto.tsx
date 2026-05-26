@@ -3,44 +3,36 @@ import AnimateIn from '@/components/shared/AnimateIn'
 
 export default function FilmManifesto() {
   return (
-    <section style={{ backgroundColor: 'var(--linen)', padding: '120px 0' }}>
+    <section style={{ backgroundColor: 'var(--bone)', padding: '160px 0 120px' }}>
       <div className="container-site">
         <AnimateIn>
           <blockquote
             className="t-display-1"
             style={{
               color: 'var(--ink)',
-              maxWidth: 900,
-              fontStyle: 'normal',
+              fontStyle: 'italic',
+              maxWidth: '100%',
             }}
           >
-            &ldquo;we shoot with intention. we edit with soul. we take our time.&rdquo;
+            &ldquo;we shoot with intention.<br />we edit with soul.&rdquo;
           </blockquote>
         </AnimateIn>
 
-        <hr className="hairline" style={{ marginTop: 64, marginBottom: 48 }} />
-
-        <AnimateIn delay={100}>
+        <AnimateIn delay={120}>
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: 40,
+              display: 'flex',
+              gap: 48,
+              marginTop: 80,
+              paddingTop: 48,
+              borderTop: '1px solid var(--putty)',
+              flexWrap: 'wrap',
             }}
           >
-            {[
-              'shot with intention',
-              'edited by hand',
-              'no presets. ever.',
-            ].map((label) => (
+            {['shot with intention', 'edited by hand', 'no presets. ever.'].map((label) => (
               <span key={label} className="t-eyebrow">{label}</span>
             ))}
-          </div>
-        </AnimateIn>
-
-        <AnimateIn delay={200}>
-          <div style={{ marginTop: 48 }}>
-            <Link href="/film" className="t-link">
+            <Link href="/film" className="t-link" style={{ marginLeft: 'auto' }}>
               our approach →
             </Link>
           </div>
