@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${fraunces.variable} ${interTight.variable} ${jetbrainsMono.variable}`}>
       <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Header />
-        <main style={{ flex: 1, paddingTop: 64 }}>
+        <main style={{ flex: 1, paddingTop: 88 }}>
           {children}
         </main>
         <Footer />
