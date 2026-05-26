@@ -1,27 +1,29 @@
+import Image from 'next/image'
+
 interface WordmarkProps {
   size?: 'sm' | 'md' | 'lg' | 'nav'
+  variant?: 'dark' | 'light'
 }
 
-export default function Wordmark({ size = 'md' }: WordmarkProps) {
-  const mainSize = size === 'lg' ? 72 : size === 'nav' ? 24 : 28
-  const subSize = size === 'lg' ? 26 : size === 'nav' ? 10 : 11
+const heightMap: Record<NonNullable<WordmarkProps['size']>, number> = {
+  nav: 44,
+  sm: 36,
+  md: 56,
+  lg: 120,
+}
+
+export default function Wordmark({ size = 'md', variant = 'dark' }: WordmarkProps) {
+  const h = heightMap[size]
+  const src = variant === 'light' ? '/logo-iviejo-light.png' : '/logo-iviejo.png'
 
   return (
-    <span
-      style={{
-        fontFamily: 'var(--font-display)',
-        fontWeight: 300,
-        letterSpacing: '-0.04em',
-        lineHeight: 1,
-        display: 'inline-flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        color: 'var(--ink)',
-        textDecoration: 'none',
-      }}
-    >
-      <span style={{ fontSize: mainSize, lineHeight: 0.92 }}>iviejo</span>
-      <span style={{ fontSize: subSize, letterSpacing: '-0.02em', paddingLeft: 4, marginTop: 2 }}>photo</span>
-    </span>
+    <Image
+      src={src}
+      alt="iviejo photo"
+      width={1200}
+      height={480}
+      style={{ height: h, width: 'auto' }}
+      priority={size === 'nav'}
+    />
   )
 }
