@@ -30,18 +30,18 @@ export default function AboutPage() {
         <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/placeholder-bw.svg"
+            src="https://picsum.photos/seed/iviejo-about2/1400/700"
             alt="the studio"
             className="photo"
-            style={{ width: '100%', height: '70vh', objectFit: 'cover', display: 'block' }}
+            style={{ width: '100%', height: '60vw', maxHeight: '70vh', minHeight: 240, objectFit: 'cover', display: 'block' }}
           />
         </div>
       </section>
 
       {/* Story */}
-      <section style={{ padding: '120px 0', backgroundColor: 'var(--bone)' }}>
+      <section className="section-pad" style={{ backgroundColor: 'var(--bone)' }}>
         <div className="container-site">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'start' }}>
+          <div className="grid-2col" style={{ alignItems: 'start' }}>
             <AnimateIn>
               <div>
                 <span className="t-eyebrow" style={{ marginBottom: 24, display: 'block' }}>about</span>
@@ -90,18 +90,12 @@ export default function AboutPage() {
       </section>
 
       {/* What to expect */}
-      <section style={{ backgroundColor: 'var(--linen)', padding: '120px 0' }}>
+      <section className="section-pad" style={{ backgroundColor: 'var(--linen)' }}>
         <div className="container-site">
           <AnimateIn>
             <span className="t-eyebrow" style={{ marginBottom: 48, display: 'block' }}>what to expect</span>
           </AnimateIn>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: 0,
-            }}
-          >
+          <div className="grid-3col" style={{ gap: 0 }}>
             {process.map((step, i) => (
               <AnimateIn key={step.label} delay={i * 80}>
                 <div

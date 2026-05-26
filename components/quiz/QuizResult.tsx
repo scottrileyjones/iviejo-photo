@@ -8,29 +8,29 @@ import AnimateIn from '@/components/shared/AnimateIn'
 
 const profileImages: Record<string, string[]> = {
   'warm-portrait': [
-    '/placeholder-warm.svg',
-    '/placeholder-bw.svg',
-    '/placeholder-cool.svg',
+    'https://picsum.photos/seed/iviejo-warm/800/1000',
+    'https://picsum.photos/seed/iviejo-bw/800/1000',
+    'https://picsum.photos/seed/iviejo-cool/800/1000',
   ],
   'vivid-wanderer': [
-    '/placeholder-amber.svg',
-    '/placeholder-warm.svg',
-    '/placeholder-bw.svg',
+    'https://picsum.photos/seed/iviejo-amber/800/1000',
+    'https://picsum.photos/seed/iviejo-warm/800/1000',
+    'https://picsum.photos/seed/iviejo-bw/800/1000',
   ],
   'editorial-bw': [
-    '/placeholder-cool.svg',
-    '/placeholder-amber.svg',
-    '/placeholder-warm.svg',
+    'https://picsum.photos/seed/iviejo-cool/800/1000',
+    'https://picsum.photos/seed/iviejo-amber/800/1000',
+    'https://picsum.photos/seed/iviejo-warm/800/1000',
   ],
   'golden-session': [
-    '/placeholder-amber.svg',
-    '/placeholder-bw.svg',
-    '/placeholder-warm.svg',
+    'https://picsum.photos/seed/iviejo-amber/800/1000',
+    'https://picsum.photos/seed/iviejo-bw/800/1000',
+    'https://picsum.photos/seed/iviejo-warm/800/1000',
   ],
   'heirloom-session': [
-    '/placeholder-warm.svg',
-    '/placeholder-warm.svg',
-    '/placeholder-cool.svg',
+    'https://picsum.photos/seed/iviejo-warm/800/1000',
+    'https://picsum.photos/seed/iviejo-warm/800/1000',
+    'https://picsum.photos/seed/iviejo-cool/800/1000',
   ],
 }
 

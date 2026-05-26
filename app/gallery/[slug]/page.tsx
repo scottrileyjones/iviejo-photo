@@ -21,12 +21,12 @@ const shootData: Record<string, {
     film_format: 'digital',
     description: 'shot over two days in the canyon. the light in late october in moab is unrepeatable — golden, long, and unforgiving in the best way.',
     images: [
-      { src: '/placeholder-cool.svg', alt: 'Carter & Elise, Moab' },
-      { src: '/placeholder-amber.svg', alt: 'Carter & Elise, Moab' },
-      { src: '/placeholder-warm.svg', alt: 'Carter & Elise, Moab' },
-      { src: '/placeholder-warm.svg', alt: 'Carter & Elise, Moab' },
-      { src: '/placeholder-amber.svg', alt: 'Carter & Elise, Moab' },
-      { src: '/placeholder-cool.svg', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/seed/iviejo-cool/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/seed/iviejo-amber/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/seed/iviejo-warm/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/seed/iviejo-warm/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/seed/iviejo-amber/800/1000', alt: 'Carter & Elise, Moab' },
+      { src: 'https://picsum.photos/seed/iviejo-cool/800/1000', alt: 'Carter & Elise, Moab' },
     ],
   },
   'marisol-oaxaca-2024': {
@@ -38,9 +38,9 @@ const shootData: Record<string, {
     film_format: 'digital',
     description: 'marisol wanted something that felt like a record — not a photo shoot. we wandered for half a day and let the city do most of the work.',
     images: [
-      { src: '/placeholder-warm.svg', alt: 'Marisol, Oaxaca' },
-      { src: '/placeholder-bw.svg', alt: 'Marisol, Oaxaca' },
-      { src: '/placeholder-bw.svg', alt: 'Marisol, Oaxaca' },
+      { src: 'https://picsum.photos/seed/iviejo-warm/800/1000', alt: 'Marisol, Oaxaca' },
+      { src: 'https://picsum.photos/seed/iviejo-bw/800/1000', alt: 'Marisol, Oaxaca' },
+      { src: 'https://picsum.photos/seed/iviejo-bw/800/1000', alt: 'Marisol, Oaxaca' },
     ],
   },
 }
