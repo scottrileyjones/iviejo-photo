@@ -8,9 +8,7 @@ export default function Footer() {
       <div className="container-site" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 40, marginBottom: 64 }}>
           <div>
-            <span style={{ color: 'var(--bone)' }}>
-              <Wordmark size="md" />
-            </span>
+            <Wordmark size="md" variant="light" />
             <p className="t-caption" style={{ color: 'var(--slate)', marginTop: 16, lineHeight: 1.6 }}>
               utah-based analog film photography.<br />
               we shoot on real film.
