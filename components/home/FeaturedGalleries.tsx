@@ -2,152 +2,68 @@ import Link from 'next/link'
 import AnimateIn from '@/components/shared/AnimateIn'
 
 const featured = [
-  {
-    title: 'Marisol',
-    caption: 'Oaxaca · warm & golden',
-    year: 2024,
-    src: '/placeholder-warm.svg',
-    href: '/gallery',
-  },
-  {
-    title: 'Carter & Elise',
-    caption: 'Moab, Utah · vivid & saturated',
-    year: 2024,
-    src: '/placeholder-cool.svg',
-    href: '/gallery',
-  },
-  {
-    title: 'The Andersons',
-    caption: 'Salt Lake City · editorial b&w',
-    year: 2025,
-    src: '/placeholder-bw.svg',
-    href: '/gallery',
-  },
-  {
-    title: 'Priya',
-    caption: 'Bonneville Salt Flats · warm & golden',
-    year: 2024,
-    src: '/placeholder-amber.svg',
-    href: '/gallery',
-  },
-  {
-    title: 'James & Sol',
-    caption: 'Arches NP · vivid & saturated',
-    year: 2025,
-    src: '/placeholder-amber.svg',
-    href: '/gallery',
-  },
+  { title: 'Marisol', caption: 'Oaxaca · warm & golden', year: 2024, src: 'https://picsum.photos/seed/iviejo-f1/800/1000', href: '/gallery' },
+  { title: 'Carter & Elise', caption: 'Moab, Utah · vivid & saturated', year: 2024, src: 'https://picsum.photos/seed/iviejo-f2/800/1000', href: '/gallery' },
+  { title: 'The Andersons', caption: 'Salt Lake City · editorial b&w', year: 2025, src: 'https://picsum.photos/seed/iviejo-f3/800/1000', href: '/gallery' },
+  { title: 'Priya', caption: 'Bonneville Salt Flats · warm & golden', year: 2024, src: 'https://picsum.photos/seed/iviejo-f4/800/1000', href: '/gallery' },
+  { title: 'James & Sol', caption: 'Arches NP · vivid & saturated', year: 2025, src: 'https://picsum.photos/seed/iviejo-f5/800/1000', href: '/gallery' },
 ]
+
+function ImageOverlay({ src, title, caption, href, size = 'md' }: { src: string; title: string; caption: string; href: string; size?: 'lg' | 'md' | 'sm' }) {
+  const fontSize = size === 'lg' ? 28 : size === 'md' ? 20 : 16
+  return (
+    <Link href={href} style={{ display: 'block', textDecoration: 'none' }}>
+      <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '100%' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={title} className="photo" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,23,20,0.6) 0%, transparent 55%)' }} />
+        <div style={{ position: 'absolute', bottom: size === 'sm' ? 16 : 24, left: size === 'sm' ? 16 : 24 }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize, color: 'var(--bone)', letterSpacing: '-0.02em', lineHeight: 1 }}>{title}</p>
+          <p className="t-caption" style={{ color: 'rgba(246,242,236,0.65)', marginTop: 6 }}>{caption}</p>
+        </div>
+      </div>
+    </Link>
+  )
+}
 
 export default function FeaturedGalleries() {
   return (
-    <section style={{ backgroundColor: 'var(--bone)', paddingBottom: 160 }}>
-      {/* Section label */}
-      <div className="container-site" style={{ paddingBottom: 40 }}>
-        <AnimateIn>
-          <span className="t-eyebrow">selected work</span>
-        </AnimateIn>
+    <section style={{ backgroundColor: 'var(--bone)', paddingBottom: 120 }}>
+      <div className="container-site" style={{ paddingBottom: 32 }}>
+        <AnimateIn><span className="t-eyebrow">selected work</span></AnimateIn>
       </div>
 
-      {/* Hero row: large left + two stacked right */}
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 4 }}>
-        <AnimateIn>
-          <Link href={featured[0].href} style={{ display: 'block', textDecoration: 'none' }}>
-            <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4/5' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={featured[0].src}
-                alt={featured[0].title}
-                className="photo"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(to top, rgba(26,23,20,0.55) 0%, transparent 50%)',
-                }}
-              />
-              <div style={{ position: 'absolute', bottom: 32, left: 32 }}>
-                <p style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 28, color: 'var(--bone)', letterSpacing: '-0.02em', lineHeight: 1 }}>
-                  {featured[0].title}
-                </p>
-                <p className="t-caption" style={{ color: 'rgba(246,242,236,0.7)', marginTop: 6 }}>{featured[0].caption}</p>
+      {/* Hero row */}
+      <AnimateIn>
+        <div className="grid-featured-main">
+          <div style={{ aspectRatio: '4/5' }}>
+            <ImageOverlay src={featured[0].src} title={featured[0].title} caption={featured[0].caption} href={featured[0].href} size="lg" />
+          </div>
+          <div className="hide-mobile" style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            {[featured[1], featured[2]].map((item) => (
+              <div key={item.title} style={{ flex: 1 }}>
+                <ImageOverlay src={item.src} title={item.title} caption={item.caption} href={item.href} size="sm" />
               </div>
-            </div>
-          </Link>
-        </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </AnimateIn>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {[featured[1], featured[2]].map((item, i) => (
-            <AnimateIn key={item.title} delay={i * 80}>
-              <Link href={item.href} style={{ display: 'block', textDecoration: 'none' }}>
-                <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4/5' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={item.src}
-                    alt={item.title}
-                    className="photo"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: 'linear-gradient(to top, rgba(26,23,20,0.55) 0%, transparent 60%)',
-                    }}
-                  />
-                  <div style={{ position: 'absolute', bottom: 20, left: 20 }}>
-                    <p style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 18, color: 'var(--bone)', letterSpacing: '-0.01em', lineHeight: 1 }}>
-                      {item.title}
-                    </p>
-                    <p className="t-caption" style={{ color: 'rgba(246,242,236,0.7)', marginTop: 4 }}>{item.caption}</p>
-                  </div>
-                </div>
-              </Link>
-            </AnimateIn>
+      {/* Second row */}
+      <AnimateIn delay={80}>
+        <div className="grid-featured-secondary hide-mobile">
+          {[featured[3], featured[4]].map((item, i) => (
+            <div key={item.title} style={{ aspectRatio: i === 0 ? '3/4' : '16/9' }}>
+              <ImageOverlay src={item.src} title={item.title} caption={item.caption} href={item.href} size="md" />
+            </div>
           ))}
         </div>
-      </div>
-
-      {/* Second row: wide + narrow */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 4, marginTop: 4 }}>
-        {[featured[3], featured[4]].map((item, i) => (
-          <AnimateIn key={item.title} delay={i * 80}>
-            <Link href={item.href} style={{ display: 'block', textDecoration: 'none' }}>
-              <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: i === 0 ? '3/4' : '16/9' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="photo"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to top, rgba(26,23,20,0.55) 0%, transparent 60%)',
-                  }}
-                />
-                <div style={{ position: 'absolute', bottom: 24, left: 24 }}>
-                  <p style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 20, color: 'var(--bone)', letterSpacing: '-0.01em', lineHeight: 1 }}>
-                    {item.title}
-                  </p>
-                  <p className="t-caption" style={{ color: 'rgba(246,242,236,0.7)', marginTop: 6 }}>{item.caption}</p>
-                </div>
-              </div>
-            </Link>
-          </AnimateIn>
-        ))}
-      </div>
+      </AnimateIn>
 
       <div className="container-site">
         <AnimateIn delay={100}>
-          <div style={{ marginTop: 64 }}>
-            <Link href="/gallery" className="t-link">
-              all work →
-            </Link>
+          <div style={{ marginTop: 48 }}>
+            <Link href="/gallery" className="t-link">all work →</Link>
           </div>
         </AnimateIn>
       </div>

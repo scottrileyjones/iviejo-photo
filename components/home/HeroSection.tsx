@@ -2,22 +2,16 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section
-      style={{
-        marginTop: -88,
-        minHeight: '100vh',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        backgroundColor: 'var(--bone)',
-      }}
-    >
+    <section className="grid-hero-layout" style={{ marginTop: -88, backgroundColor: 'var(--bone)' }}>
       {/* Left: text */}
       <div
+        className="hero-text-col"
         style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
           padding: '160px 64px 100px 40px',
+          order: 2,
         }}
       >
         <span
@@ -39,36 +33,23 @@ export default function HeroSection() {
           <span style={{ color: 'var(--forest)', fontStyle: 'italic' }}>form.</span>
         </h1>
 
-        <p
-          className="t-body"
-          style={{ marginTop: 40, maxWidth: 380, color: 'var(--graphite)' }}
-        >
+        <p className="t-body" style={{ marginTop: 40, maxWidth: 380, color: 'var(--graphite)' }}>
           cinematic portrait photography for couples, families &amp; milestones. utah.
         </p>
 
         <div style={{ display: 'flex', gap: 16, marginTop: 48, flexWrap: 'wrap' }}>
-          <Link href="/gallery" className="btn-primary">
-            view the work
-          </Link>
-          <Link href="/quiz" className="btn-outline">
-            find your session
-          </Link>
+          <Link href="/gallery" className="btn-primary">view the work</Link>
+          <Link href="/quiz" className="btn-outline">find your session</Link>
         </div>
       </div>
 
       {/* Right: full-height image */}
-      <div style={{ position: 'relative', overflow: 'hidden' }}>
+      <div className="hero-image-col" style={{ position: 'relative', overflow: 'hidden', order: 1 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/placeholder-warm.svg"
+          src="https://picsum.photos/seed/iviejo-hero/900/1200"
           alt=""
-          style={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
         />
       </div>
     </section>
