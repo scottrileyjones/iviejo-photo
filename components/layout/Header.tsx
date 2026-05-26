@@ -35,7 +35,7 @@ export default function Header() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          height: 64,
+          height: 88,
         }}
       >
         <Link href="/" style={{ textDecoration: 'none' }}>

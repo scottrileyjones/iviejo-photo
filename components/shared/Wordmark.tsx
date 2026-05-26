@@ -6,7 +6,7 @@ interface WordmarkProps {
 }
 
 // logo-iviejo.png is 1200x480 (aspect ratio 2.5)
-const heights: Record<string, number> = { sm: 36, nav: 52, md: 56, lg: 100 }
+const heights: Record<string, number> = { sm: 36, nav: 72, md: 56, lg: 100 }
 
 export default function Wordmark({ size = 'md', variant = 'dark' }: WordmarkProps) {
   const h = heights[size]
