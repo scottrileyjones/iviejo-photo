@@ -3,7 +3,7 @@ import Link from 'next/link'
 import GalleryLightbox from '@/components/gallery/GalleryLightbox'
 import { isDriveConfigured, getShootImages } from '@/lib/drive'
 
-export const revalidate = 60
+export const revalidate = 0
 export const dynamicParams = true
 
 // Fallback static data — used when Drive is not configured

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import GalleryGrid, { ShootItem } from '@/components/gallery/GalleryGrid'
 import { isDriveConfigured, listShoots } from '@/lib/drive'
 
-export const revalidate = 60
+export const revalidate = 0
 
 export const metadata: Metadata = {
   title: 'work',
