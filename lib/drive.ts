@@ -83,7 +83,7 @@ export async function listShoots(): Promise<DriveShoot[]> {
     const imageFiles = files.filter(f => f.mimeType?.startsWith('image/'))
     const coverImageId = imageFiles[0]?.id ?? null
 
-    shoots.push({ slug: folder.name, folderId: folder.id, meta, coverImageId })
+    shoots.push({ slug: folder.id, folderId: folder.id, meta, coverImageId })
   }
 
   return shoots
@@ -91,15 +91,14 @@ export async function listShoots(): Promise<DriveShoot[]> {
 
 export async function getShootImages(slug: string): Promise<{ meta: ShootMeta; images: DriveImage[] } | null> {
   const drive = getDriveClient()
-  const rootId = process.env.GOOGLE_DRIVE_FOLDER_ID!
 
-  const foldersRes = await drive.files.list({
-    q: `'${rootId}' in parents and name = '${slug}' and mimeType = 'application/vnd.google-apps.folder' and trashed = false`,
-    fields: 'files(id, name)',
+  const folderRes = await drive.files.get({
+    fileId: slug,
+    fields: 'id, name',
   })
 
-  const folder = foldersRes.data.files?.[0]
-  if (!folder?.id) return null
+  const folder = folderRes.data
+  if (!folder?.id || !folder?.name) return null
 
   const filesRes = await drive.files.list({
     q: `'${folder.id}' in parents and trashed = false`,
