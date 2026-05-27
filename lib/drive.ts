@@ -9,6 +9,16 @@ export interface ShootMeta {
   description: string
 }
 
+function parseFolderName(name: string): Partial<ShootMeta> {
+  const parts = name.split(' - ')
+  return {
+    title: parts[0]?.trim() || name,
+    location: parts[1]?.trim() || '',
+    year: parseInt(parts[2]?.trim() || '') || new Date().getFullYear(),
+    look: parts[3]?.trim() || '',
+  }
+}
+
 export interface DriveShoot {
   slug: string
   folderId: string
@@ -60,24 +70,14 @@ export async function listShoots(): Promise<DriveShoot[]> {
     })
     const files = filesRes.data.files ?? []
 
-    const metaFile = files.find(f => f.name === 'meta.json')
-    let meta: ShootMeta = {
-      title: folder.name,
-      location: '',
-      year: new Date().getFullYear(),
+    const parsed = parseFolderName(folder.name)
+    const meta: ShootMeta = {
+      title: parsed.title || folder.name,
+      location: parsed.location || '',
+      year: parsed.year || new Date().getFullYear(),
       camera: '',
-      look: 'warm & golden',
+      look: parsed.look || '',
       description: '',
-    }
-
-    if (metaFile?.id) {
-      try {
-        const metaRes = await drive.files.get(
-          { fileId: metaFile.id, alt: 'media' },
-          { responseType: 'json' }
-        )
-        meta = { ...meta, ...(metaRes.data as object) }
-      } catch { /* use defaults */ }
     }
 
     const imageFiles = files.filter(f => f.mimeType?.startsWith('image/'))
@@ -108,24 +108,14 @@ export async function getShootImages(slug: string): Promise<{ meta: ShootMeta; i
   })
   const files = filesRes.data.files ?? []
 
-  const metaFile = files.find(f => f.name === 'meta.json')
-  let meta: ShootMeta = {
-    title: slug,
-    location: '',
-    year: new Date().getFullYear(),
+  const parsed = parseFolderName(folder.name)
+  const meta: ShootMeta = {
+    title: parsed.title || slug,
+    location: parsed.location || '',
+    year: parsed.year || new Date().getFullYear(),
     camera: '',
-    look: 'warm & golden',
+    look: parsed.look || '',
     description: '',
-  }
-
-  if (metaFile?.id) {
-    try {
-      const metaRes = await drive.files.get(
-        { fileId: metaFile.id, alt: 'media' },
-        { responseType: 'json' }
-      )
-      meta = { ...meta, ...(metaRes.data as object) }
-    } catch { /* use defaults */ }
   }
 
   const images: DriveImage[] = files

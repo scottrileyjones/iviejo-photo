@@ -5,7 +5,7 @@ import Link from 'next/link'
 import AnimateIn from '@/components/shared/AnimateIn'
 import Chip from '@/components/ui/Chip'
 
-const categories = ['all', 'portrait', 'couples', 'family', 'graduation', 'events', 'b&w']
+const categories = ['all', 'dance', 'graduation', 'model', 'family']
 
 export interface ShootItem {
   title: string
