@@ -119,6 +119,7 @@ export async function getShootImages(slug: string): Promise<{ meta: ShootMeta; i
 
   const images: DriveImage[] = files
     .filter(f => f.mimeType?.startsWith('image/'))
+    .slice(0, 10)
     .map(f => ({
       id: f.id!,
       name: f.name!,
