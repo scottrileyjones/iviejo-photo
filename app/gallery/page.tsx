@@ -28,7 +28,7 @@ async function getShoots(): Promise<ShootItem[]> {
     const driveShoots = await listShoots()
     return driveShoots.map((s) => ({
       title: s.meta.title,
-      category: 'portrait',
+      category: s.meta.look,
       location: s.meta.location,
       year: s.meta.year,
       src: s.coverImageId ? `/api/drive-image/${s.coverImageId}` : staticShoots[0].src,
